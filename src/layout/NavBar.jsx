@@ -1,15 +1,13 @@
 import './NavBar.css';
 import Logout from '../components/LogoutButton';
+import Avatar from '../components/Avatar';
 
 const NavBar = ({ loggedCharacter, logout }) => {
   return (
     <nav>
       {loggedCharacter && (
         <>
-          <div className="avatar">
-            <img src={loggedCharacter.image} alt="character-logo" />
-            <p>{loggedCharacter.name}</p>
-          </div>
+          <Avatar character={loggedCharacter} />
           <Logout logout={logout} />
         </>
       )}
