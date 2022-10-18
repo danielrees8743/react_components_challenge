@@ -1,4 +1,5 @@
 import './CardContainer.css';
+import Card from '../components/Card';
 
 const CardContainer = ({
   loggedCharacter,
@@ -14,9 +15,9 @@ const CardContainer = ({
           <h1>Choose Your Main Character</h1>
           <section id="character-container">
             {characters.slice(0, 5).map((character) => (
-              <div className="card card-login">
+              <div className="card card-login" key={character.id}>
                 <img src={character.image} alt="character" />
-                <div className="card-container">
+                <div className="card-container" key={character.id}>
                   <h2>{character.name}</h2>
                 </div>
                 <div className="button-container">
@@ -34,29 +35,7 @@ const CardContainer = ({
       ) : (
         <section id="character-container">
           {allCharacters.map((character) => (
-            <div className="card">
-              <img src={character.image} alt="character" />
-              <div className="card-container">
-                <h2>{character.name}</h2>
-                <p>
-                  <span>Sex:</span> {character.gender}
-                </p>
-                <p>
-                  <span>Status:</span> {character.status}
-                </p>
-                <p>
-                  <span>Species:</span> {character.species}
-                </p>
-              </div>
-              <div className="button-container">
-                <button
-                  className="choose-button"
-                  onClick={() => addCharacter(character.id)}
-                >
-                  Choose
-                </button>
-              </div>
-            </div>
+            <Card character={character} addCharacter={addCharacter} />
           ))}
         </section>
       )}

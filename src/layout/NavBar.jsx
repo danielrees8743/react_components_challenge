@@ -1,4 +1,5 @@
 import './NavBar.css';
+import Logout from '../components/LogoutButton';
 
 const NavBar = ({ loggedCharacter, logout }) => {
   return (
@@ -6,12 +7,10 @@ const NavBar = ({ loggedCharacter, logout }) => {
       {loggedCharacter && (
         <>
           <div className="avatar">
-            <img src={loggedCharacter.image} />
+            <img src={loggedCharacter.image} alt="character-logo" />
             <p>{loggedCharacter.name}</p>
           </div>
-          <button className="logout" onClick={logout}>
-            Logout
-          </button>
+          <Logout logout={logout} />
         </>
       )}
     </nav>
