@@ -1,5 +1,5 @@
-const Image = (character) => {
-  return <img src={character.image} alt="character" />;
+const Image = ({ image }) => {
+  return <img src={image.image} alt="characters" />;
 };
 
 export default Image;

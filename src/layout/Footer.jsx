@@ -1,4 +1,5 @@
 import './Footer.css';
+import LogoutButton from '../components/LogoutButton';
 
 const Footer = () => {
   return (

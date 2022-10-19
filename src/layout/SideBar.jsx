@@ -18,6 +18,7 @@ const SideBar = ({ loggedCharacter, chosen, characters, removeCharacter }) => {
                   <SelectedCard
                     character={character}
                     removeCharacter={removeCharacter}
+                    key={character.id}
                   />
                 );
               })}

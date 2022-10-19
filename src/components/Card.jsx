@@ -4,7 +4,7 @@ import Image from './Image';
 const Card = ({ character, addCharacter }) => {
   return (
     <div className="card">
-      <Image image={character.image} />
+      <Image image={character} />
 
       <div className="card-container">
         <h2>{character.name}</h2>

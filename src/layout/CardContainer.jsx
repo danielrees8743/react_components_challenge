@@ -1,5 +1,6 @@
 import './CardContainer.css';
 import Card from '../components/Card';
+import Image from '../components/Image';
 
 const CardContainer = ({
   loggedCharacter,
@@ -16,7 +17,7 @@ const CardContainer = ({
           <section id="character-container">
             {characters.slice(0, 5).map((character) => (
               <div className="card card-login" key={character.id}>
-                <img src={character.image} alt="character" />
+                <Image image={character} />
                 <div className="card-container" key={character.id}>
                   <h2>{character.name}</h2>
                 </div>
@@ -35,7 +36,11 @@ const CardContainer = ({
       ) : (
         <section id="character-container">
           {allCharacters.map((character) => (
-            <Card character={character} addCharacter={addCharacter} />
+            <Card
+              character={character}
+              addCharacter={addCharacter}
+              key={character.id}
+            />
           ))}
         </section>
       )}
